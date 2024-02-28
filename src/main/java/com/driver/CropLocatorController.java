@@ -24,7 +24,7 @@ public class CropLocatorController {
 		return new ResponseEntity<>("Crop registered successfully!", HttpStatus.CREATED);
 	}
 
-	@GetMapping("/locate")
+	@GetMapping("/locate/{latitude}/{longitude}")
 	public ResponseEntity<Crop> getCropByLocation(@RequestParam double latitude, @RequestParam double longitude) {
 		Crop foundCrop = cropService.findCropByLocation(latitude, longitude);
 
